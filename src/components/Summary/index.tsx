@@ -27,7 +27,7 @@ export function Summary(){
 
   return(
     <Container>
-      <div>
+      <div className='deposit-color'>
         <header>
           <p>Entradas</p>
           <img src={incomeImg} alt="Entradas" />
@@ -38,12 +38,12 @@ export function Summary(){
             currency: 'BRL',
           }).format(summary.deposits)}</strong>
       </div>
-      <div>
+      <div className='withdraws-color'>
         <header>
           <p>Saídas</p>
           <img src={outcomeImg} alt="Saídas" />
         </header>
-        <strong>-           
+        <strong>           
           {new Intl.NumberFormat('pt-BR',{
             style: 'currency',
             currency: 'BRL',
@@ -51,7 +51,7 @@ export function Summary(){
       </div>
       <div className='highlight-background'>
         <header>
-          <p>Total</p>
+          <p>Saldo</p>
           <img src={totalImg} alt="Total" />
         </header>
         <strong>

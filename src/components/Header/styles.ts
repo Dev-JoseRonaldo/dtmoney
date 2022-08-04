@@ -2,30 +2,38 @@ import styled from "styled-components";
 
 export const Container = styled.header`
   background-color: var(--blue);
+  border-bottom-left-radius: 125px;
 
 `
 
 export const Content = styled.div`
-  max-width: 1120px;
+  max-width: 1200px;
   margin: 0 auto;
 
-  padding: 2rem 1rem 12rem;
+  padding: 3rem 1rem 6rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+`
 
-  button{
-    font-size: 1rem;
-    color: #fff;
-    background: var(--blue-light);
-    border: 0;
-    padding: 0 2rem;
-    border-radius: 0.25rem;
-    height: 3rem;
-    transition: filter 0.2s;
+export const ProfileContainer = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  text-align: center;
 
-    &:hover{
-      filter: brightness(0.9);
-    }
+  color: var(--text-white);
+  font-size: 0.875rem;
+
+  .text-box{
+    display: flex;
+    flex-direction: column;
+    text-align: end;
+  }
+
+  img{
+    width: 55px;
+    border-radius: 50%;
   }
 `

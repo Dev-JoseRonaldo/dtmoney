@@ -1,19 +1,24 @@
 import logoImg from '../../assets/logo.svg';
-import { Container, Content } from './styles';
+import { Container, Content, ProfileContainer } from './styles';
 
-interface HeaderProps{
-  onOpenNewTransactionModal: () => void
-}
-
-
-export function Header({onOpenNewTransactionModal} : HeaderProps){
+export function Header(){
   return(
     <Container>  
       <Content>
         <img src={logoImg} alt="dt money" />
-        <button type="button" onClick={onOpenNewTransactionModal}> 
-          Nova Transação 
-        </button>
+
+        <ProfileContainer>
+          <div className='text-box'>
+            <strong>Ronaldo</strong>
+            <strong>BRA</strong>
+          </div>
+          <img 
+            className='profile-img' 
+            src="https://avatars.githubusercontent.com/u/83667469?v=4" 
+            alt="Foto de perfil do Ronaldo"
+          />
+        </ProfileContainer>
+
       </Content>   
     </Container>
   )

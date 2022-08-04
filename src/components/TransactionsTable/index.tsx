@@ -1,11 +1,21 @@
 import { useTransactions } from "../../hooks/useTransactions";
 import { Container } from "./styles";
+import { NotePencil, Plus, TrashSimple } from "phosphor-react";
 
-export function TransactionsTable(){
+interface TransactionsTableProps{
+  onOpenNewTransactionModal: () => void
+}
+
+export function TransactionsTable({onOpenNewTransactionModal} : TransactionsTableProps){
   const { transactions } = useTransactions();
 
   return(
-    <Container>
+    <Container>        
+      <button type="button" onClick={onOpenNewTransactionModal}> 
+      <Plus color="#ffffff" size={14} />
+        NOVA TRANSAÇÃO 
+      </button>
+          
       <table>
         <thead>
           <tr>
@@ -13,6 +23,7 @@ export function TransactionsTable(){
             <th>Valor</th>
             <th>Categoria</th>
             <th>Data</th>
+            <th>Ações</th>
           </tr>
         </thead>
 
@@ -32,9 +43,15 @@ export function TransactionsTable(){
                   new Date(transaction.createdAt)
                 )}                
               </td>
-            </tr>           
-          ))}
+              <td>
+                <div className="btnBox">
 
+                <NotePencil className="btnActions" color="#EBD50F" size={22} alt="Editar Transação"/>
+                <TrashSimple className="btnActions" color="#FF7657" size={22} alt="Deletar Transação"/>
+                </div>
+              </td>
+            </tr>           
+          ))}         
         </tbody>
       </table>
     </Container>

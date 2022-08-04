@@ -33,7 +33,7 @@ export const Container = styled.form`
     width: 100%;
     padding: 0 1.5rem;
     height: 4rem;
-    background: var(--green);
+    background: var(--blue-light);
     color: #fff;
     border-radius: 0.25rem;
     border: 0;
@@ -73,7 +73,7 @@ export const RadioBox = styled.button<RadioBoxProps>`
   border-radius: 0.25rem;
 
   background: ${(props) => props.isActive
-   ? transparentize(0.8,colors[props.activeColor] )
+   ? transparentize(0.9,colors[props.activeColor] )
    : 'transparent'};
 
   display: flex;
