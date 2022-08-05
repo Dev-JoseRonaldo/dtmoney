@@ -4,10 +4,11 @@ import { NotePencil, Plus, TrashSimple } from "phosphor-react";
 
 interface TransactionsTableProps{
   onOpenNewTransactionModal: () => void
+
 }
 
 export function TransactionsTable({onOpenNewTransactionModal} : TransactionsTableProps){
-  const { transactions } = useTransactions();
+  const { transactions, handleDeleteTransaction } = useTransactions();
 
   return(
     <Container>        
@@ -28,8 +29,8 @@ export function TransactionsTable({onOpenNewTransactionModal} : TransactionsTabl
         </thead>
 
         <tbody>
-          {transactions.map(transaction => (         
-            <tr key={transaction.id}>
+          {transactions.map(transaction => (        
+            <tr key={transaction.id}>            
               <td>{transaction.title}</td>
               <td className={transaction.type}>
                 {new Intl.NumberFormat('pt-BR',{
@@ -47,13 +48,19 @@ export function TransactionsTable({onOpenNewTransactionModal} : TransactionsTabl
                 <div className="btnBox">
 
                 <NotePencil className="btnActions" color="#EBD50F" size={22} alt="Editar Transação"/>
-                <TrashSimple className="btnActions" color="#FF7657" size={22} alt="Deletar Transação"/>
+                <TrashSimple 
+                  className="btnActions" 
+                  onClick={() => handleDeleteTransaction(transaction.id)} 
+                  color="#FF7657" 
+                  size={22} 
+                  alt="Deletar Transação"/>
                 </div>
               </td>
             </tr>           
           ))}         
         </tbody>
       </table>
+
     </Container>
   )
 }

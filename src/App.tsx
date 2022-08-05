@@ -24,7 +24,7 @@ export function App() {
       <TransactionsProvider>
         <Header toggleTheme = {toggleTheme} />
         <Dashboard />
-
+        
         <GlobalStyle />
       </TransactionsProvider>
     </ThemeProvider>

@@ -92,6 +92,11 @@ createServer({
 
       return schema.create('transaction', data)
     });
+
+    this.del("/transactions/:id", (schema: any, request) => {
+      const { id } = request.params;
+      return schema.transactions.find(id).destroy();
+    });
   }
 })
 

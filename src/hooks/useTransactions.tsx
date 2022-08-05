@@ -21,6 +21,7 @@ interface TransactionsProvidesProps{
 interface TransactionsContextData{
   transactions: Transaction[];
   createTransaction: (transaction: TransactionInput) => Promise<void>
+  handleDeleteTransaction: (id: number) => Promise<void>;
 }
 
 const TransactionsContext = createContext<TransactionsContextData>(
@@ -43,13 +44,27 @@ export function TransactionsProvider({children}: TransactionsProvidesProps){
     const { transaction } = response.data;
 
     setTransactions([
-      ...transactions,
       transaction,
+      ...transactions,   
     ]);
   }
 
+  async function handleDeleteTransaction(id: number) {
+    try {
+      await api.delete(`transactions/${id}`);
+
+      const filteredTransactions = transactions.filter(
+        (transaction) => transaction.id !== id
+      );
+
+      setTransactions(filteredTransactions);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
   return (
-    <TransactionsContext.Provider value={{transactions, createTransaction}}>
+    <TransactionsContext.Provider value={{transactions, createTransaction, handleDeleteTransaction}}>
       {children}
     </TransactionsContext.Provider>
   );
