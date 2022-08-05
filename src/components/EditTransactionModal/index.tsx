@@ -14,22 +14,25 @@ interface NewTransactionModalProps {
 }
 
 export function EditTransactionModal({isOpen, onRequestClose} : NewTransactionModalProps){
-  const { createTransaction } = useTransactions()
+  const { handleUpdateTransaction } = useTransactions();
 
   const [type, setType] = useState('deposit')
   const [title, setTitle] = useState('')
   const [amount, setAmount] = useState(0)
   const [category, setCategory] = useState('')
 
-  async function handleCreateNewTransaction(event: FormEvent){
-    event.preventDefault()
 
-    await createTransaction({
+
+  async function updateTransaction(event: FormEvent){
+
+    event.preventDefault();
+
+    await handleUpdateTransaction({
       title,
       amount,
-      category,
       type,
-    })
+      category,
+    });
 
     setType('deposit');
     setTitle('');
@@ -54,7 +57,7 @@ export function EditTransactionModal({isOpen, onRequestClose} : NewTransactionMo
         <img src={closeImg} alt="Fechar Modal" />
       </button>
 
-      <Container onSubmit={handleCreateNewTransaction}>
+      <Container onSubmit={updateTransaction}>
         <h2>Atualizar Transação</h2>
         
         <input

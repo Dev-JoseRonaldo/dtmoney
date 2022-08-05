@@ -9,7 +9,7 @@ interface TransactionsTableProps{
 }
 
 export function TransactionsTable({onOpenNewTransactionModal, onOpenEditTransactionModal} : TransactionsTableProps){
-  const { transactions, handleDeleteTransaction } = useTransactions();
+  const { transactions, handleDeleteTransaction, getEditData } = useTransactions();
 
   return(
     <Container>        
@@ -50,7 +50,10 @@ export function TransactionsTable({onOpenNewTransactionModal, onOpenEditTransact
 
                 <NotePencil 
                   className="btnActions" 
-                  onClick={onOpenEditTransactionModal}
+                  onClick={()=>{
+                    onOpenEditTransactionModal();
+                    getEditData(transaction);}                               
+                  }
                   color="#EBD50F" 
                   size={22} 
                   alt="Editar Transação"

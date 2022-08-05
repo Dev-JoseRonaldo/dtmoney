@@ -20,8 +20,12 @@ interface TransactionsProvidesProps{
 
 interface TransactionsContextData{
   transactions: Transaction[];
+  getEditData: (transaction: Transaction) => void;
   createTransaction: (transaction: TransactionInput) => Promise<void>
   handleDeleteTransaction: (id: number) => Promise<void>;
+  handleUpdateTransaction: (
+    transactionsUpdate: TransactionInput
+  ) => Promise<void>;
 }
 
 const TransactionsContext = createContext<TransactionsContextData>(
@@ -30,6 +34,9 @@ const TransactionsContext = createContext<TransactionsContextData>(
 
 export function TransactionsProvider({children}: TransactionsProvidesProps){
   const [transactions, setTransactions] = useState<Transaction[]>([]);
+  const [editTransaction, setEditTransactions] = useState<Transaction>(
+    {} as Transaction
+  );
 
   useEffect(() =>{
     api.get('transactions')
@@ -63,8 +70,33 @@ export function TransactionsProvider({children}: TransactionsProvidesProps){
     }
   }
 
+  async function handleUpdateTransaction(transactionsUpdate: TransactionInput) {
+    console.log(editTransaction.id)
+    try {
+      const response = await api.put(`/transactions/${editTransaction.id}`, {
+        ...editTransaction,
+        ...transactionsUpdate,
+        
+      });
+
+      const updateTransactions = transactions.map((transaction) =>
+        transaction.id === editTransaction.id
+          ? { ...response.data.transaction }
+          : transaction
+      );
+
+      setTransactions(updateTransactions);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  function getEditData(transaction: Transaction) {
+    setEditTransactions(transaction);
+  }
+
   return (
-    <TransactionsContext.Provider value={{transactions, createTransaction, handleDeleteTransaction}}>
+    <TransactionsContext.Provider value={{getEditData, transactions, createTransaction, handleDeleteTransaction,handleUpdateTransaction}}>
       {children}
     </TransactionsContext.Provider>
   );
