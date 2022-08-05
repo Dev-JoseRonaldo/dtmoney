@@ -9,7 +9,7 @@ export const Container = styled.div`
   button{
     font-size: 0.875rem;
     color: #fff;
-    background: var(--blue-light);
+    background: var(--secundary);
     border: 0;
     padding: 0.5rem 1.25rem;
     border-radius: 15px;
@@ -61,7 +61,7 @@ export const Container = styled.div`
       }
 
       tr {              
-        background: var(--blue-light);              
+        background: var(--secundary);              
       }
     }
 

@@ -1,0 +1,17 @@
+export default {
+  title: 'light',
+
+  colors: {
+    primary: '#0F4C75',
+    secundary: '#3282B8',
+    background: '#f8f2f5',
+    shape: '#ffffff',
+
+    text_white: '#ffffff',
+    text_body: '#969cb3',
+    text_title: '#000000',
+    red: '#e52e40',
+    green: '#33cc95'
+  }
+};
+

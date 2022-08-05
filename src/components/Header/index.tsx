@@ -1,7 +1,17 @@
+import React, { useContext } from 'react';
+import { ThemeContext } from 'styled-components';
+import Switch from 'react-switch';
+
 import logoImg from '../../assets/logo.svg';
 import { Container, Content, ProfileContainer } from './styles';
 
-export function Header(){
+interface Props{
+  toggleTheme(): void;
+}
+
+export function Header ({ toggleTheme } : Props){
+  const { colors, title } = useContext(ThemeContext)
+
   return(
     <Container>  
       <Content>
@@ -11,6 +21,17 @@ export function Header(){
           <div className='text-box'>
             <strong>Ronaldo</strong>
             <strong>BRA</strong>
+            <Switch 
+              onChange={toggleTheme}
+              checked={title === 'dark'}
+              checkedIcon={false}
+              uncheckedIcon={false}
+              height={10}
+              width={40}
+              handleDiameter={15}
+              offColor={colors.secundary}
+              onColor= {colors.text_white}
+            />
           </div>
           <img 
             className='profile-img' 

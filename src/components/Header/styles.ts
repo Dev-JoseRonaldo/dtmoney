@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.header`
-  background-color: var(--blue);
+  background-color: var(--primary);
   border-bottom-left-radius: 125px;
 
 `
