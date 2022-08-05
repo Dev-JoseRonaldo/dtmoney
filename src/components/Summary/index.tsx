@@ -1,9 +1,5 @@
 import { useTransactions } from '../../hooks/useTransactions';
 
-import incomeImg from '../../assets/income.svg';
-import outcomeImg from '../../assets/outcome.svg';
-import totalImg from '../../assets/total.svg';
-
 import { Container } from "./styles";
 
 export function Summary(){
@@ -30,7 +26,6 @@ export function Summary(){
       <div className='deposit-color'>
         <header>
           <p>Entradas</p>
-          <img src={incomeImg} alt="Entradas" />
         </header>
         <strong>          
           {new Intl.NumberFormat('pt-BR',{
@@ -41,7 +36,6 @@ export function Summary(){
       <div className='withdraws-color'>
         <header>
           <p>Saídas</p>
-          <img src={outcomeImg} alt="Saídas" />
         </header>
         <strong>           
           {new Intl.NumberFormat('pt-BR',{
@@ -52,7 +46,6 @@ export function Summary(){
       <div className='highlight-background'>
         <header>
           <p>Saldo</p>
-          <img src={totalImg} alt="Total" />
         </header>
         <strong>
           {new Intl.NumberFormat('pt-BR',{

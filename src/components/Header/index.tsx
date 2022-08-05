@@ -20,7 +20,7 @@ export function Header ({ toggleTheme } : Props){
         <ProfileContainer>
           <div className='text-box'>
             <strong>Ronaldo</strong>
-            <strong>BRA</strong>
+            
             <Switch 
               onChange={toggleTheme}
               checked={title === 'dark'}
@@ -33,6 +33,7 @@ export function Header ({ toggleTheme } : Props){
               onColor= {colors.text_white}
             />
           </div>
+
           <img 
             className='profile-img' 
             src="https://avatars.githubusercontent.com/u/83667469?v=4" 

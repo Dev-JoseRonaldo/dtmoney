@@ -1,22 +1,22 @@
-import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { Dashboard } from './components/Dashboard';
 import { Header } from './components/Header';
+import usePersistedState from './hooks/usePersistedState';
 
 import { TransactionsProvider } from './hooks/useTransactions';
 
 import { GlobalStyle } from './styles/global';
 import { ThemeProvider } from 'styled-components';
-import light from './styles/theme/light'
-import dark from './styles/theme/dark'
+import { lightTheme } from './styles/theme/light'
+import { darkTheme } from './styles/theme/dark'
 
 Modal.setAppElement('#root');
 
 export function App() {
-  const [theme, setTheme] = useState(light)
+  const [theme, setTheme] = usePersistedState('theme',lightTheme)
 
   const toggleTheme = () => {
-    setTheme(theme.title === 'light' ? dark : light)
+    setTheme(theme.title === 'light' ? darkTheme : lightTheme)
   }
 
   return (

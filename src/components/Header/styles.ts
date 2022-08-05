@@ -29,6 +29,7 @@ export const ProfileContainer = styled.div`
   .text-box{
     display: flex;
     flex-direction: column;
+    align-items: flex-end;
     text-align: end;
   }
 
