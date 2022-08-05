@@ -12,6 +12,10 @@ export const darkTheme = {
     text_title: '#A3A3A4',
     red: '#FF5660',
     green: '#00D132',
+
+    background_input: '#6d6d6d',
+    border_input: '#6d6d6d',
+    text_input: '#c9c9c9'
   
   }
 };

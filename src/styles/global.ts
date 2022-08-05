@@ -12,7 +12,12 @@ export const GlobalStyle = createGlobalStyle`
     --text-title: ${props => props.theme.colors.text_title};
     --red: ${props => props.theme.colors.red};
     --green: ${props => props.theme.colors.green};
+
+    --background-input: ${props => props.theme.colors.background_input};
+    --border-input: ${props => props.theme.colors.border_input};
+    --text-input: ${props => props.theme.colors.text_input};
   }
+  
   
   * {
     margin: 0;

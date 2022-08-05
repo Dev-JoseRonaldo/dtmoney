@@ -23,7 +23,7 @@ export const ProfileContainer = styled.div`
   gap: 0.8rem;
   text-align: center;
 
-  color: var(--text-white);
+  color: #ffffff;
   font-size: 0.875rem;
 
   .text-box{

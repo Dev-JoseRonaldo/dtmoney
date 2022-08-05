@@ -15,6 +15,10 @@ declare module 'styled-components' {
       text_title: string;
       red: string;
       green: string;
+
+      background_input: string;
+      border_input: string;
+      text_input: string;
     }
   }
 }

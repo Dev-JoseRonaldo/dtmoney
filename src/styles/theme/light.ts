@@ -11,7 +11,12 @@ export const lightTheme = {
     text_body: '#969cb3',
     text_title: '#000000',
     red: '#e52e40',
-    green: '#33cc95'
+    green: '#33cc95',
+
+    background_input: '#e7e9ee',
+    border_input: '#d7d7d7',
+    text_input: '#6c6c6c'
+ 
   }
 };
 
