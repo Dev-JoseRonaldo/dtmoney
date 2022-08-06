@@ -1,46 +1,75 @@
-# Getting Started with Create React App
+<p align="center">
+  <a href="#-tecnologias">Tecnologias</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#-projeto">Projeto</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+</p>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">
+ <img src="https://img.shields.io/static/v1?label=PRs&message=welcome&color=49AA26&labelColor=000000" alt="PRs welcome!" />
 
-## Available Scripts
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=49AA26&labelColor=000000">
+</p>
 
-In the project directory, you can run:
+<br>
 
-### `npm start`
+<p align="center">
+  <img alt="dt money" src="https://i.imgur.com/7TQrkKd.png" width="100%">
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 🚀 Tecnologias
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Esse projeto foi desenvolvido com as seguintes tecnologias e bibliotecas:
 
-### `npm test`
+* [ReactJS](https://reactjs.org/)
+* [Typescript](https://www.typescriptlang.org/)
+* [Styled Components](https://www.styled-components.com/)
+* [Polished](https://polished.js.org/)
+* [MirageJS](https://miragejs.com/) (Fake Api)
+* [React Modal](https://github.com/reactjs/react-modal)
+* [React Switch](https://www.npmjs.com/package/react-switch)
+* [Axios](https://github.com/axios/axios)
+* [Phosphor Icons](https://phosphoricons.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## 💻 Projeto
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Esse é um projeto, responsivo, desenvolvido durante a trilha de ReactJS do curso ignite promovido pela [Rocketseat](https://lp.rocketseat.com.br/ignite). O projeto consiste em um site para administração financeira.
+ Com esse projeto foi possível aprender e praticar diversos conceitos básicos do ReactJS, Context API, hooks, Styled Components, Polished, MirageJS, requisições http com Axios, etc. 
+ 
+ <br>
+ <br>
+ 
+Segue abaixo algumas modificações e implementações feitas no projeto para potencializar o aprendizado:
+ 
+- Modificação visual em todo layout da aplicação;
+- Melhora na responsividade da aplicação;
+- Implemetada a funcionalidade do usuário DELETAR uma transação cadastrada.
+- Implemetada a funcionalidade do usuário ATUALIZAR uma transação cadastrada.
+- Implemetado o modo claro e modo escuro.
+- Implemetada a funcionalidade de salvar no localStorage a preferência do usuário (claro ou escuro).
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Como usar o projeto
+```bash
+# Clone o projeto
+$ git clone https://github.com/augustodevjs/dtmoney
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+# Instale todas as depedências
+$ npm install
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# Rode o projeto
+$ npm start
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+# O servidor vai ser inicializado no <http://localhost:3000/>
+```
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## 📝 Licença
 
-## Learn More
+Copyright (c) 2022 José Ronaldo de Souza Silva.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](https://github.com/Dev-JoseRonaldo/dtmoney/blob/main/LICENSE.md) para mais detalhes.
+---
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Feito com ♥ by José Ronaldo :wave:
+
+
