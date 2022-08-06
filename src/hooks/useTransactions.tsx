@@ -44,12 +44,16 @@ export function TransactionsProvider({children}: TransactionsProvidesProps){
   }, [])
 
   async function createTransaction(transactionInput: TransactionInput){
+
     const response = await api.post('/transactions', {
       ...transactionInput,
       createdAt: new Date(),
     });
     const { transaction } = response.data;
-
+    if(!transaction.title||!transaction.category||transaction.amount <= 0){
+      alert(`Prencha os dados corretamente! Todos os campos devem ser preenchidos!`)
+      return
+    }
     setTransactions([
       transaction,
       ...transactions,   
@@ -71,15 +75,20 @@ export function TransactionsProvider({children}: TransactionsProvidesProps){
   }
 
   async function handleUpdateTransaction(transactionsUpdate: TransactionInput) {
-    console.log(editTransaction.id)
     try {
+      if(!transactionsUpdate.title||!transactionsUpdate.category||transactionsUpdate.amount <= 0){
+        alert(`Prencha os dados corretamente! Todos os campos devem ser preenchidos!`)
+        return
+      }
       const response = await api.put(`/transactions/${editTransaction.id}`, {
         ...editTransaction,
         ...transactionsUpdate,
         
       });
 
+
       const updateTransactions = transactions.map((transaction) =>
+      
         transaction.id === editTransaction.id
           ? { ...response.data.transaction }
           : transaction
