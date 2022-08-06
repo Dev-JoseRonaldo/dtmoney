@@ -23,8 +23,8 @@ export function TransactionsTable({onOpenNewTransactionModal, onOpenEditTransact
           <tr>
             <th>Título</th>
             <th>Valor</th>
-            <th>Categoria</th>
-            <th>Data</th>
+            <th className="hide-mobile">Categoria</th>
+            <th className="hide-mobile">Data</th>
             <th>Ações</th>
           </tr>
         </thead>
@@ -39,31 +39,31 @@ export function TransactionsTable({onOpenNewTransactionModal, onOpenEditTransact
                   currency: 'BRL',
                 }).format(transaction.amount)}
               </td>
-              <td>{transaction.category}</td>
-              <td>
+              <td className="hide-mobile">{transaction.category}</td>
+              <td className="hide-mobile">
                 {new Intl.DateTimeFormat('pt-BR').format(
                   new Date(transaction.createdAt)
                 )}                
               </td>
               <td>
                 <div className="btnBox">
-
-                <NotePencil 
-                  className="btnActions" 
-                  onClick={()=>{
-                    onOpenEditTransactionModal();
-                    getEditData(transaction);}                               
-                  }
-                  color="#EBD50F" 
-                  size={22} 
-                  alt="Editar Transação"
-                />
-                <TrashSimple 
-                  className="btnActions" 
-                  onClick={() => handleDeleteTransaction(transaction.id)} 
-                  color="#FF7657" 
-                  size={22} 
-                  alt="Deletar Transação"/>
+                  <NotePencil 
+                    className="btnActions" 
+                    onClick={()=>{
+                      onOpenEditTransactionModal();
+                      getEditData(transaction);}                               
+                    }
+                    color="#EBD50F" 
+                    size={22} 
+                    alt="Editar Transação"
+                  />
+                  <TrashSimple 
+                    className="btnActions" 
+                    onClick={() => handleDeleteTransaction(transaction.id)} 
+                    color="#FF7657" 
+                    size={22} 
+                    alt="Deletar Transação"
+                  />
                 </div>
               </td>
             </tr>           

@@ -10,6 +10,19 @@ export const Container =  styled.div`
 
   font-size: 1.2rem;
 
+  @media(max-width: 1080px) {
+    max-width: 800px;
+    gap: 2rem;
+  }
+
+  @media(max-width: 700px) {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    max-width: 800px;
+    gap: 1rem;
+  }
+
   div {
     width: 100%;
     background: var(--shape);
@@ -46,6 +59,19 @@ export const Container =  styled.div`
     &.highlight-background{
       background: var(--green);
       color: #fff;
+    }
+    &.highlight-background.red{
+      background: var(--red);
+    }
+
+    @media(max-width: 700px) {
+      max-width: 45%;
+    }
+
+    @media(max-width: 570px) {  
+      max-width: 400px;
+      min-width: 300px;
+    
     }
   }
 

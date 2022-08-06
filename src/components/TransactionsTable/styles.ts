@@ -49,11 +49,16 @@ export const Container = styled.div`
         border-bottom-right-radius: 15px;
         box-shadow: 2px 2px 2px  rgba(0, 0, 0, 0.1);                       
       }
-          
+
+      &.hide-mobile{
+        @media(max-width: 700px) {
+          display: none;
+        }
+      }
+         
     }
       
     thead{
-
       th {
         color: var(--text-white);
         font-weight: 400;
@@ -61,6 +66,10 @@ export const Container = styled.div`
         text-align: left;
         line-height: 1.5rem;   
         box-shadow: 0px 5px 4px -3px rgba(0, 0, 0, 0.1);   
+
+        @media(max-width: 500px) {
+          padding: 1rem 1rem;
+        }
       }
 
       tr {              
@@ -80,8 +89,16 @@ export const Container = styled.div`
         td {
           box-shadow: 0px 5px 4px -3px rgba(0, 0, 0, 0.1);
           padding: 1rem 2rem;
+
+          @media(max-width: 500px) {
+            padding: 1rem 1rem;
+          }
          
-          
+          &.hide-mobile{
+            @media(max-width: 700px) {
+              display: none;
+            }
+          }
           
           &:first-child {
             color: var(--text-title);

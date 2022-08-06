@@ -4,6 +4,14 @@ export const Container = styled.header`
   background-color: var(--primary);
   border-bottom-left-radius: 125px;
 
+  @media(max-width: 1400px) {
+    border-bottom-left-radius: 0;
+  }
+
+  @media(max-width: 900px) {
+    border-bottom-left-radius: 0;
+  }
+
 `
 
 export const Content = styled.div`
@@ -14,6 +22,24 @@ export const Content = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @media(max-width: 500px) {
+    padding: 1rem 1rem 5rem;
+  }
+
+  img{
+    @media(max-width: 700px) {
+      width: 150px;
+    }
+    
+    @media(max-width: 500px) {
+      width: 120px;
+    }  
+
+    @media(max-width: 400px) {
+      width: 100px;
+    }   
+}
 `
 
 export const ProfileContainer = styled.div`
@@ -36,5 +62,10 @@ export const ProfileContainer = styled.div`
   img{
     width: 55px;
     border-radius: 50%;
+
+    @media(max-width: 500px) {
+      width: 40px;
+    }
+
   }
 `

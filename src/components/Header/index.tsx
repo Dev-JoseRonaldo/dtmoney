@@ -26,9 +26,9 @@ export function Header ({ toggleTheme } : Props){
               checked={title === 'dark'}
               checkedIcon={false}
               uncheckedIcon={false}
-              height={10}
-              width={40}
-              handleDiameter={15}
+              height={8}
+              width={30}
+              handleDiameter={13}
               offColor={colors.secundary}
               onColor= {colors.text_white}
             />

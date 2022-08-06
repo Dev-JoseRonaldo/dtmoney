@@ -49,12 +49,12 @@ export function Summary(){
             currency: 'BRL',
           }).format(summary.withdraws)}</strong>
       </div>
-      <div className='highlight-background'>
+      <div className={'highlight-background ' + (summary.total >= 0 ? 'green' : 'red')  }>
         <header>
           <p>Saldo</p>
           <img src={totalImg} alt="" />
         </header>
-        <strong>
+        <strong >
           {new Intl.NumberFormat('pt-BR',{
             style: 'currency',
             currency: 'BRL',
