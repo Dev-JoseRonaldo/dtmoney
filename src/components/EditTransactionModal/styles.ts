@@ -57,6 +57,10 @@ export const TransactionTypeContainer = styled.div`
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
 
+  @media(max-width: 400px) {
+    grid-template-columns: 1fr;
+  }
+
 `
 
 interface RadioBoxProps {
