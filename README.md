@@ -51,7 +51,7 @@ Segue abaixo algumas modificações e implementações feitas no projeto para po
 ## Como usar o projeto
 ```bash
 # Clone o projeto
-$ git clone https://github.com/augustodevjs/dtmoney
+$ git clone https://github.com/Dev-JoseRonaldo/dtmoney.git
 
 # Instale todas as depedências
 $ npm install
