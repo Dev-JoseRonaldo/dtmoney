@@ -36,7 +36,6 @@ Esse é um projeto, responsivo, desenvolvido durante a trilha de ReactJS do curs
  Com esse projeto foi possível aprender e praticar diversos conceitos básicos do ReactJS, Context API, hooks, Styled Components, Polished, MirageJS, requisições http com Axios, etc. 
  
  <br>
- <br>
  
 Segue abaixo algumas modificações e implementações feitas no projeto para potencializar o aprendizado:
  
